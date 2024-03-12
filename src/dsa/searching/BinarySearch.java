@@ -24,6 +24,23 @@ public class BinarySearch {
         return -1;
     }
 
+
+    public static int searchIndexRecursively(int[] array, int searchElement, int low, int high) {
+        if (low > high) return -1; // rasti baze kur nuk gjendet
+        int mid = (low + high) / 2;
+        if (searchElement == array[mid])
+            return mid;
+        else if (searchElement < array[mid])
+            return searchIndexRecursively(array, searchElement, low, mid - 1);
+        else
+            return searchIndexRecursively(array, searchElement, mid + 1, high);
+    }
+
+    public static int searchIndexRecursively(int[] array, int searchElement) {
+        return searchIndexRecursively(array, searchElement, 0, array.length - 1);
+    }
+
+
     public static boolean contains(int[] array, int searchValue) {
         return searchIndex(array, searchValue) >= 0;
     }
@@ -35,6 +52,9 @@ public class BinarySearch {
         boolean exist = contains(array, 88);
         System.out.println(index);
         System.out.println(exist);
+
+        int indexR = searchIndexRecursively(array, 88);
+        System.out.println("IndexR = " + indexR);
     }
 }
 
