@@ -1,5 +1,7 @@
 package dsa.elementary_sorts;
 
+import dsa.shared.Helper;
+
 public class BubbleSort {
     public static void bubbleSort(int[] array) {
         boolean swapped = true;
@@ -10,9 +12,10 @@ public class BubbleSort {
                 if (array[j] > array[j + 1]) {
                     swapped = true;
                     // SWAP elements in array
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+//                    int temp = array[j];
+//                    array[j] = array[j + 1];
+//                    array[j + 1] = temp;
+                    Helper.swap(array, j, j + 1);
                 }
             }
         }
