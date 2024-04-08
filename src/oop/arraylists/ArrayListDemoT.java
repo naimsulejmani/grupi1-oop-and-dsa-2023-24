@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ArrayListDemoT {
     public static void main(String[] args) {
-        ArrayList<String> names = new ArrayList<>();
+        ArrayList<String> names = new ArrayList<>(); // String[] names = new String[10];
         names.add("Naim");
         names.add("Agon");
         String emri1 = names.get(0);
