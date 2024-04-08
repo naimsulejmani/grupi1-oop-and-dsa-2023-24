@@ -12,7 +12,6 @@ public class TodoDemo {
 
         showMenu();
 
-
         int choice = Integer.parseInt(reader.nextLine());
         ToDoMenu selectedMenu = ToDoMenu.values()[choice];
 
@@ -91,7 +90,35 @@ public class TodoDemo {
     }
 
     private static void updateTodo(ArrayList<TodoItem> todos) {
+        readAllTodo(todos);
+        System.out.println("Zgjedh njeren nga taskatq e deshironi me ndryshu");
 
+        int choice = Integer.parseInt(reader.nextLine());
+
+        if (choice >= 0 && choice < todos.size()) {
+            TodoItem item = todos.get(choice);
+
+
+
+            System.out.println("A deshironi me ndru titullin e taskut!");
+            boolean response = reader.nextLine().equalsIgnoreCase("PO");
+
+            if (response) {
+                System.out.println("Shkruaj titullin e ri: ");
+                String newTitle = reader.nextLine();
+                item.setTitle(newTitle);
+            }
+
+            System.out.println("A deshironi me nderru statusin e taskut!");
+            response = reader.nextLine().equalsIgnoreCase("PO");
+            if (response) {
+                item.setCompleted(!item.isCompleted()); // nese ka qene false beje true, nese ka qene true beje false
+            }
+            // nese skishte funksionuar idea me pass by reference
+            //todos.set(choice, item);
+        } else {
+            System.out.println("Keni zgjedhur jasht rangut te lejuar!");
+        }
     }
 
     private static void createTodo(ArrayList<TodoItem> todos) {
