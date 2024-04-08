@@ -37,9 +37,10 @@ public class TodoDemo {
     private static void clearAlLTodo(ArrayList<TodoItem> todos) {
         System.out.println("----------------------------------------------------------------");
         System.out.println("Ju jeni duke i fshire te gjitha te dhenat!");
+        System.out.println("Ne total do te fshihen " + todos.size() + " todo!");
         System.out.println("A jeni i sigurte (shtyp PO per ti fshire!, tejter per ti ra pishman)");
         boolean areYouSure = reader.nextLine().equalsIgnoreCase("PO");
-        if(areYouSure) {
+        if (areYouSure) {
             todos.clear();
         } else {
             System.out.println("Pishmanli!!!!");
@@ -57,6 +58,8 @@ public class TodoDemo {
             index++;
         }
         System.out.println("-----------------------------");
+        System.out.println("Total todos: " + todos.size());
+        System.out.println("-----------------------------");
     }
 
     private static void readOneTodo(ArrayList<TodoItem> todos) {
@@ -73,6 +76,18 @@ public class TodoDemo {
     }
 
     private static void deleteTodo(ArrayList<TodoItem> todos) {
+        readAllTodo(todos);
+        System.out.println("Zgjedh njeren nga todo qe deshironi me fshi: #");
+        int choice = Integer.parseInt(reader.nextLine());
+
+        if (choice >= 0 && choice < todos.size()) {
+            TodoItem item = todos.get(choice);
+            todos.remove(item);
+            System.out.printf("Tasku %s eshte fshire me sukses!%n", item);
+        } else {
+            System.out.println("Keni zgjedhur jasht rangut te lejuar!");
+        }
+        System.out.println("---------------------------------------------");
     }
 
     private static void updateTodo(ArrayList<TodoItem> todos) {
