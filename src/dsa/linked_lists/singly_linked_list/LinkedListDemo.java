@@ -8,14 +8,31 @@ public class LinkedListDemo {
         list.addFirst(10);
 
         list.addLast(40);
+        list.addAfterIndex(2, 35);
+        list.addAfterIndex(4, 45);
 
-        list.removeLast();
-        list.removeFirst();
+        System.out.println("-------------------");
+        System.out.println("First:" + list.findFirst());
+        System.out.println("Last: " + list.findLast());
+        System.out.println("-------------------");
+
+//        list.removeLast();
+//        list.removeFirst();
 
         list.printAll();
-
         System.out.println("PROVO PRAP");
         list.printAll();
-
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
