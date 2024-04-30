@@ -31,7 +31,8 @@ public class Manager extends SalariedEmployee {
 
     @Override
     public String toString() {
-        return "";
+        return String.format("%s%nBonusi: %.2f%nTotali per pagese: %.2f EUR%n Pozita: Menaxher",
+                super.toString(), bonusPercentage * 100, pay());
     }
 }
 

@@ -29,6 +29,16 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "";
+        return String.format("%s%nPaga: %.2f EUR", super.toString(), salary);
     }
 }
+
+
+
+
+
+
+
+
+
+

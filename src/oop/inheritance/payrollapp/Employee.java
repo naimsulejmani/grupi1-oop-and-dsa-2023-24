@@ -56,6 +56,16 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "";
+        return String.format("Per: %d - %s %s", id, name, lastName);
     }
 }
+
+
+
+
+
+
+
+
+
+

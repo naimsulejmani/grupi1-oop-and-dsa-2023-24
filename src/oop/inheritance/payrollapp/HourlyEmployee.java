@@ -39,7 +39,8 @@ public class HourlyEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "";
+        return String.format("%s%nNr. oreve: %.2f%nCmimi per ore: %.2f EUR%nTotali per pagese: %.2f EUR",
+                super.toString(), hours, hourlyWage, pay());
     }
 }
 

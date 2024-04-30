@@ -23,6 +23,15 @@ public class Programmer extends SalariedEmployee {
 
     @Override
     public String toString() {
-        return "";
+        return String.format("%s%nTotali per pagese: %.2f EUR%nPozita: Programer",
+                super.toString(), pay());
     }
 }
+
+
+
+
+
+
+
+
