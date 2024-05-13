@@ -1,6 +1,19 @@
 package oop.polymorphism.ushtrime;
 
 public class ShapeDemo {
+
+    //instance initializer block
+    {
+
+    }
+
+    //static initializer block
+    static {
+
+    }
+
+
+
     public static void main(String[] args) {
         Shape sh1 = new Circle(2.3);
         Shape sh2 = new Square(5);

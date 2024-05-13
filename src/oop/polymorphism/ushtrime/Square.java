@@ -3,7 +3,7 @@ package oop.polymorphism.ushtrime;
 public class Square extends Shape {
     private int side;
 
-    public Square(int side) {
+    public Square(final int side) {
         this.side = side;
     }
 
@@ -16,7 +16,7 @@ public class Square extends Shape {
     }
 
     @Override
-    public double area() {
+    public final double area() {
         return side * side;
     }
 
