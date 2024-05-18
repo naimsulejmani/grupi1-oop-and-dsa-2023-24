@@ -17,6 +17,10 @@ public class BSTDemo {
         bst.preOrderTraversal();
         System.out.println("PostOrder");
         bst.postOrderTraversal();
+        System.out.println("Minimal: " + bst.minimal());
+        System.out.println("Maximal: " + bst.maximal());
+        System.out.println("Exists 35: " + bst.exists(35));
+        System.out.println("Exists 40: " + bst.exists(40));
     }
 
 }

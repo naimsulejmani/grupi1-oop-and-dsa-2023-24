@@ -83,6 +83,79 @@ public class BinarySearchTree<T extends Comparable<T>> {
         System.out.println(root);
     }
 
+    public T minimal() {
+//        if (isEmpty()) return null;
+//        Node<T> iter = root;
+//        while (iter.getLeft() != null) {
+//            iter = iter.getLeft();
+//        }
+//        return iter.getData();
+        return minimal(root).getData();
+    }
+
+    private Node<T> minimal(Node<T> iter) {
+        if (iter == null) return null;
+        while (iter.getLeft() != null) {
+            iter = iter.getLeft();
+        }
+        return iter;
+    }
+
+    public T maximal() {
+//        if (isEmpty()) return null;
+//        Node<T> iter = root;
+//        while (iter.getRight() != null) {
+//            iter = iter.getRight();
+//        }
+//        return iter.getData();
+        return maximal(root).getData();
+    }
+
+    private Node<T> maximal(Node<T> iter) {
+        if (iter == null) return null;
+        while (iter.getRight() != null) {
+            iter = iter.getRight();
+        }
+        return iter;
+    }
+
+    public boolean exists(T value) {
+        if (isEmpty()) return false;
+        return search(root, value) != null;
+    }
+
+    private Node<T> search(Node<T> iter, T value) {
+        if (iter == null || iter.getData().compareTo(value) == 0) return iter;
+        else if (iter.getData().compareTo(value) > 0)
+            return search(iter.getLeft(), value);
+        else return search(iter.getRight(), value);
+    }
+
+    private Node<T> treeSuccessor(Node<T> iter) {
+//        return minimal(iter.getRight());
+        return maximal(iter.getLeft());
+    }
+
+
+    public T delete(T value) {
+        if (isEmpty()) return null;
+        // nese eshte nyje gjethe bane null menihere
+
+        //nese eshte vlera me e vogel se root
+        //shko ne anen e majte, nese ska femije fshije root->left->null
+        //nese ka nje femij, root dergon tek femija
+        //nese ka dy femij, perdore treeSuccessor -
+
+        //nese eshte vlera ma e madhe se root
+        //shko ne anen e djatht, nese ska femije root->right->null
+        //nese ka nje femij, root dergon tek femija
+        //nese ka dy femij, perdore treeSuccessor
+    }
+
+
+
+
+
     /*
         search, exist
         minimumNode
