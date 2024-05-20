@@ -9,7 +9,7 @@ public class AutoClosableExample {
         //try with resources (auto closable)
         try (
                 BufferedReader reader = new BufferedReader(new FileReader("files/test.txt"));
-                PrintWriter writer = new PrintWriter(new FileWriter("files/copy_test.txt"))
+                PrintWriter writer = new PrintWriter(new FileWriter("files/copy_test.txt"));
         ) {
 
             String line = reader.readLine();
