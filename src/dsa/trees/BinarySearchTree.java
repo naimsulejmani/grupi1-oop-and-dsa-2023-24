@@ -150,6 +150,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         //shko ne anen e djatht, nese ska femije root->right->null
         //nese ka nje femij, root dergon tek femija
         //nese ka dy femij, perdore treeSuccessor
+        return null;
     }
 
 
