@@ -4,6 +4,6 @@ package oop.interfaces;
 public interface Player {
     public static final int x = 10;
     void move();
-    void play();
+    abstract void play();
     public abstract void shoot();
 }
