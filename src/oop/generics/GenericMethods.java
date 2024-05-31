@@ -1,5 +1,7 @@
 package oop.generics;
 
+import java.io.Serializable;
+
 public class GenericMethods {
     public static void main(String[] args) {
 
